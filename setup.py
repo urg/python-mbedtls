@@ -105,6 +105,9 @@ def check_mbedtls_support(version, url):
         sys.exit(1)
 
 
+MBEDTLS3LIB = ["_tls.pyx", "x509.pyx"]
+
+
 def extensions(coverage=False):
     def from_env(var):
         with suppress(KeyError):
@@ -128,6 +131,8 @@ def extensions(coverage=False):
         for fn in filenames:
             root, ext = os.path.splitext(fn)
             if ext != ".pyx":
+                continue
+            if fn in MBEDTLS3LIB:
                 continue
             mod = ".".join(dirpath.split(os.sep)[1:] + [root])
             extension = Extension(
