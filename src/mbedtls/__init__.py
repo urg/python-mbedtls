@@ -4,7 +4,7 @@
 
 """python-mbedtls is a this wrapper to ARM's mbed TLS library."""
 
-from __future__ import annotations
+#from __future__ import annotations
 
 import mbedtls.cipher as cipher
 import mbedtls.exceptions as exceptions
@@ -13,7 +13,6 @@ import mbedtls.hkdf as hkdf
 import mbedtls.hmac as hmac
 import mbedtls.pk as pk
 import mbedtls.secrets as secrets
-import mbedtls.tls as tls
 import mbedtls.version as version
 import mbedtls.x509 as x509
 
@@ -28,7 +27,6 @@ __all__ = (
     "hmac",
     "pk",
     "secrets",
-    "tls",
     "version",
     "x509",
 )
